@@ -3582,6 +3582,11 @@ react-native-css-interop@0.2.7:
     lightningcss "~1.27.0"
     semver "^7.6.3"
 
+react-native-edge-to-edge@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/react-native-edge-to-edge/-/react-native-edge-to-edge-1.8.2.tgz#965e8956e02488e30305c2e124c834662e18d5b5"
+  integrity sha512-9yhI/RpaXVkMqFKNHz72A7Vi8KrT6BqDcY8HOdck/so+qH0fq1EkIeNTSLplnoFW84DcLn2D7s9L/xfYSN8gyQ==
+
 react-native-gesture-handler@~2.31.1:
   version "2.31.2"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.31.2.tgz#f1832592619db00d70b036f73cf48f54cb415d71"
