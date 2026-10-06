@@ -8,15 +8,9 @@ import { View, Text, TouchableOpacity, TextInput } from "react-native";
 type LoginScreenNavigationProp = StackNavigationProp<PublicStackParamsList, 'Login'>;
 
 export const Login = () => {
-    const navigation = useNavigation<LoginScreenNavigationProp>();
-
     return (
         <DismissKeyboardView>
-            <Text>Tela de Login</Text>
-            <TextInput className="bg-gray-500 w-full" />
-            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                <Text>Registrar</Text>
-            </TouchableOpacity>
+           <View className="flex-1 w-[82%] self-center"></View>
         </DismissKeyboardView>
     );
 };
