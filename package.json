@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
     "@react-native-masked-view/masked-view": "0.3.2",
     "@react-navigation/native": "^7.5.0",
     "@react-navigation/stack": "^7.12.0",
+    "@types/react-native-vector-icons": "^6.4.18",
     "expo": "~56.0.23",
+    "expo-font": "^57.0.4",
     "expo-status-bar": "~56.0.4",
     "nativewind": "^4.2.7",
     "react": "19.2.3",
