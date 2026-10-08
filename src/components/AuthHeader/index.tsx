@@ -1,13 +1,20 @@
-import { useKeyboardVisible } from "@/shared/hooks/useKeyboardVisible";
-import { View, Image } from "react-native";
+import { useKeyboardVisible } from '@/shared/hooks/useKeyboardVisible'
+import { Image, View, type ImageSourcePropType } from 'react-native'
+
+const LogoImg = require('@/assets/Logo.png') as ImageSourcePropType
 
 export const AuthHeader = () => {
-    const keyboardIsVisible = useKeyboardVisible()
-    if(keyboardIsVisible) return <></>
+  const keyboardIsVisible = useKeyboardVisible()
 
-    return (
-        <View className="items-center justify-center w-full min-b-4">
-            <Image source={require("@/assets/Logo.png")} className="h-[48px] w-[255px]"/>
-        </View>
-    )
+  if (keyboardIsVisible) return null
+
+  return (
+    <View className="items-center justify-center w-full min-h-40">
+      <Image
+        source={LogoImg}
+        className="h-[48px] w-[255px]"
+        resizeMode="contain"
+      />
+    </View>
+  )
 }
