@@ -31,7 +31,7 @@ export const LoginForm = () => {
                 control={control}
                 name="email"
                 label="EMAIL"
-                placeholder="email@exemplo.br"
+                placeholder="email@example.br"
                 leftIconName="mail-outline"
             />
 
