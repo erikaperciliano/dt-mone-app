@@ -12,8 +12,6 @@ export const TransactionContext = createContext({} as TransactionContextType)
 export const TransactionContextProvider: FC<PropsWithChildren> = ({ children }) => { 
     const [categories, setCategories] = useState<TransactionCategory[]>([])
 
-    console.log(categories)
-
     const fetchCategories = async () => { 
         const categoriesResponse = await transactionService.getTransactionCategories()
         setCategories(categoriesResponse)
