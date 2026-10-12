@@ -1,4 +1,4 @@
-import { createContext, FC, PropsWithChildren, useState } from 'react'
+import { createContext, FC, PropsWithChildren, useContext, useState } from 'react'
 import { set } from 'react-hook-form';
 
 export type SnackbarMessageType = 'ERROR' | 'SUCCESS'
@@ -40,4 +40,10 @@ export const SnackbarContextProvider: FC<PropsWithChildren> = ({ children }) => 
             {children}
         </SnackBarContext.Provider>
     )
+}
+
+export const useSnackbarContext = () => { 
+    const context = useContext(SnackBarContext)
+
+    return context
 }
