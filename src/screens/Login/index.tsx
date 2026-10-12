@@ -11,7 +11,6 @@ export type PublicStackParamsList = {
 
 export const Login = () => {
   const { user } = useAuthContext()
-  console.log(user)
 
   return (
     <DismissKeyboardView>
