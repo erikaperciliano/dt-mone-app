@@ -10,7 +10,7 @@ import {
 import * as authService from '@/shared/services/dt-money/auth.service'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { IAuthenticateResponse } from '@/shared/interfaces/https/authenticate-response'
-import { IUser } from '@/shared/interfaces/https/user-interface';
+import { IUser } from '@/shared/interfaces/user-interface';
 
 type AuthContextType = {
   user: IUser | null
