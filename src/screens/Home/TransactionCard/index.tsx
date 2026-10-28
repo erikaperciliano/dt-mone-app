@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import { colors } from '@/shared/colors'
 import clsx from 'clsx'
 import { TransactionTypes } from '@/shared/enums/transaction-types';
+import { RightAction } from './RightAction';
 
 interface Params {
   transaction: Transaction
@@ -17,13 +18,15 @@ export const TransactionCard: FC<Params> = ({ transaction }) => {
 
   return (
     <Swipeable
-      containerStyle={{
-        alignItems: 'center',
-        alignSelf: 'center',
-        overflow: 'visible',
-        width: '90%',
-        marginBottom: 16,
-      }}
+          containerStyle={{
+              alignItems: 'center',
+              alignSelf: 'center',
+              overflow: 'visible',
+              width: '90%',
+              marginBottom: 16,
+          }}
+          renderRightActions={() => <RightAction />}
+          overshootRight={false}
     >
       <View className="h-[140] bg-background-tertiary rounded-md p-6">
         <Text className="text-white text-base">{transaction.description}</Text>
