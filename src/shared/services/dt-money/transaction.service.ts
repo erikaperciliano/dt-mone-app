@@ -22,3 +22,7 @@ export const getTransactions = async (params: GetTransactionsParams): Promise<Ge
     
     return data
 }
+
+export const deleteTransactions = async (id: number) => { 
+    await dtMoneyApi.delete(`/transaction/${id}`)
+}
