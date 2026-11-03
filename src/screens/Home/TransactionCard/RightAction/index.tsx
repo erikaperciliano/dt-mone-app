@@ -47,7 +47,7 @@ export const RightAction: FC<Params> = ({ transactionId }) => {
             >
                 <MaterialIcons name="delete-outline" color={colors.white} size={30} />
             </TouchableOpacity>
-            <DeleteModal handleDeleteTransaction={handleDeleteTransaction} visible={modalVisible} hideModal={hideModal} />
+            <DeleteModal loading={loading}  handleDeleteTransaction={handleDeleteTransaction} visible={modalVisible} hideModal={hideModal} />
         </>
     )
 }
