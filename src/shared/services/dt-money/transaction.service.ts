@@ -1,3 +1,4 @@
+import { UpdateTransactionInterface } from './../../interfaces/https/update-transaction-request';
 import { dtMoneyApi } from "@/shared/api/dt-money";
 import { CreateTransactionInterface } from "@/shared/interfaces/https/create-transaction-request";
 import { GetTransactionResponse, GetTransactionsParams } from "@/shared/interfaces/https/get-transaction-request";
@@ -25,4 +26,8 @@ export const getTransactions = async (params: GetTransactionsParams): Promise<Ge
 
 export const deleteTransactions = async (id: number) => { 
     await dtMoneyApi.delete(`/transaction/${id}`)
+}
+
+export const updateTransaction = async (transaction: UpdateTransactionInterface) => { 
+    await dtMoneyApi.put('/transaction', transaction)
 }
