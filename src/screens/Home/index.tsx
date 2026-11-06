@@ -6,6 +6,7 @@ import { FlatList, RefreshControl } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ListHeader } from "./ListHeader";
 import { TransactionCard } from "./TransactionCard";
+import { EmptyList } from "./EmptyList";
 
 export const Home = () => { 
     const { handleLogout } = useAuthContext()
@@ -99,6 +100,7 @@ export const Home = () => {
                 refreshControl={<RefreshControl refreshing={loadings.refresh} onRefresh={handleRefreshTransactions}/>}
                 onEndReached={handleLoadMoreTransactions}
                 onEndReachedThreshold={0.5}
+                ListEmptyComponent={loadings.initial ? null : <EmptyList />}
             />
         </SafeAreaView>
     )
