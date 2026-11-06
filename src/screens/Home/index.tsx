@@ -9,7 +9,7 @@ import { TransactionCard } from "./TransactionCard";
 
 export const Home = () => { 
     const { handleLogout } = useAuthContext()
-    const { fetchCategories, fetchTransactions, transactions, refreshTransactions, loading } = useTransactionContext()
+    const { fetchCategories, fetchTransactions, transactions, refreshTransactions, loading, loadMoreTransactions } = useTransactionContext()
     const { handleError } = useErrorHandler()
 
     const handleFetchCategories = async () => { 
@@ -35,6 +35,8 @@ export const Home = () => {
                 keyExtractor={({ id }) => `transaction-${id}`}
                 renderItem={({ item }) => <TransactionCard transaction={item} />}
                 refreshControl={<RefreshControl refreshing={loading} onRefresh={refreshTransactions}/>}
+                onEndReached={loadMoreTransactions}
+                onEndReachedThreshold={0.5}
             />
         </SafeAreaView>
     )
