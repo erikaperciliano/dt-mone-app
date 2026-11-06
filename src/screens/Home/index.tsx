@@ -22,7 +22,7 @@ export const Home = () => {
 
     useEffect(() => { 
         (async () => { 
-            await Promise.all([  handleFetchCategories(), await fetchTransactions() ])
+            await Promise.all([handleFetchCategories(), await fetchTransactions({ page: 1 }) ])
         })()
     },[])
 

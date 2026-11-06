@@ -12,13 +12,17 @@ import { CreateTransactionInterface } from '@/shared/interfaces/https/create-tra
 import { Transaction } from '@/shared/interfaces/transaction'
 import { TotalTransactions } from '@/shared/interfaces/totalTransaction';
 import { UpdateTransactionInterface } from '@/shared/interfaces/https/update-transaction-request';
+import { Pagination } from '@/shared/interfaces/https/get-transaction-request';
 
+interface FetchTransactionsParams { 
+  page: number
+}
 export type TransactionContextType = {
   fetchCategories: () => Promise<void>
   categories: TransactionCategory[]
   createTransaction: (transaction: CreateTransactionInterface) => Promise<void>
   updateTransaction: (transaction: UpdateTransactionInterface) => Promise<void>
-  fetchTransactions: () => Promise<void>
+  fetchTransactions: (params: FetchTransactionsParams) => Promise<void>
   totalTransactions: TotalTransactions
   transactions: Transaction[]
   refreshTransactions: () => Promise<void>
@@ -40,6 +44,12 @@ export const TransactionContextProvider: FC<PropsWithChildren> = ({
       total: 0,
     },
   )
+
+  const [pagination, setPagination] = useState<Pagination>({
+    page: 1,
+    perPage: 15,
+    total: 0,
+  })
 
   const refreshTransactions = async () => { 
     setLoading(true)
@@ -68,16 +78,32 @@ export const TransactionContextProvider: FC<PropsWithChildren> = ({
     await refreshTransactions()
   }
 
-  const fetchTransactions = useCallback(async () => {
-    const transactionsResponse = await transactionService.getTransactions({
-      page: 1,
-      perPage: 10,
-    })
-    setTransactions(transactionsResponse.data)
-    setTotalTransactions(transactionsResponse.totalTransactions)
-  }, [])
+  const fetchTransactions = useCallback(async ({ page = 1 }: FetchTransactionsParams) => {
+    setLoading(true)
 
- 
+    const transactionsResponse = await transactionService.getTransactions({
+      page,
+      perPage: pagination.perPage,
+    })
+
+    if (page === 1) {
+      setTransactions(transactionsResponse.data)
+    } else { 
+      setTransactions((prevState) => [
+        ...prevState,
+        ...transactionsResponse.data,
+      ])
+    }
+
+    setTotalTransactions(transactionsResponse.totalTransactions)
+    setPagination({
+      ...pagination,
+      page,
+      total: transactionsResponse.totalRows,
+    })
+    setLoading(false)
+  }, [pagination])
+
 
   return (
     <TransactionContext.Provider
