@@ -3,6 +3,7 @@ import { colors } from "@/shared/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Text, TouchableOpacity, View } from "react-native";
 import { DateFilter } from "./DateFilter";
+import { CategoryFilter } from "./CategoryFilter";
 
 export const TransactionFilters = () => { 
     const { closeBottomSheet } = useBottomSheetContext()
@@ -17,6 +18,7 @@ export const TransactionFilters = () => {
             </View>
 
             <DateFilter />
+            <CategoryFilter />
         </View>
     )
 }
