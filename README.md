@@ -60,3 +60,16 @@ Antes de executar o projeto, certifique-se de ter instalado:
    - Simulador iOS: Pressione i no terminal aberto (requer ambiente macOS).
 
 💡 Dica: Ao alterar configurações do Babel ou Tailwind, inicie o Expo limpando o cache: npx expo start -c.
+
+
+## 📸 Screenshots  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/74995da5-1a35-4cbc-9953-22b39d0fd1ca" alt="Login/Cadastro" width="250" />
+  <img src="https://github.com/user-attachments/assets/11df9084-5872-4de6-a364-3146029280b9" alt="Edição" width="250" />
+  <img src="https://github.com/user-attachments/assets/e8deef32-190e-4591-87d1-680e2fc896ff" alt="Remoção" width="250" />
+   
+  <img src="https://github.com/user-attachments/assets/da824693-e3a4-4903-b0a3-af237eaca639" alt="Nova Transação" width="250" />
+  <img src="https://github.com/user-attachments/assets/5e5c8dd2-4b98-47b9-9731-78eaa64f7a38" alt="Transações" width="250" />
+  <img src="https://github.com/user-attachments/assets/7194cb71-7498-4cc1-a876-18208dcf4699" alt="Filtros" width="250" />
+</p>
